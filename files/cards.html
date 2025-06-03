@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anvay Kidz World - Ultimate Toy Paradise</title>
+    <style>
+     
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(15px);
+            border: 4px solid #fff;
+            position: relative;
+            overflow: hidden;
+            z-index: 2;
+        }
+
+        .rainbow-border {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #00ff00, #0000ff, #4b0082, #9400d3);
+            border-radius: 35px;
+            z-index: -1;
+            animation: rainbowRotate 3s linear infinite;
+        }
+
+        @keyframes rainbowRotate {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        .headersss {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .title {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffd93d, #ff9ff3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            text-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            animation: bounce 2s ease-in-out infinite, textGlow 4s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-15px); }
+            60% { transform: translateY(-8px); }
+        }
+
+        @keyframes textGlow {
+            0% { filter: drop-shadow(0 0 5px rgba(255, 107, 107, 0.5)); }
+            100% { filter: drop-shadow(0 0 20px rgba(78, 205, 196, 0.8)); }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
+            margin-bottom: 25px;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { opacity: 0; transform: translateX(-50px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        .urgency-banner {
+            background: linear-gradient(45deg, #ff4757, #ff6b83, #ff4757);
+            background-size: 200% 200%;
+            animation: bannerShine 2s ease-in-out infinite;
+            color: white;
+            padding: 20px 30px;
+            border-radius: 50px;
+            font-size: 1.6rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 30px 0;
+            box-shadow: 0 12px 35px rgba(255, 71, 87, 0.5);
+            transform: rotate(-1deg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .urgency-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes bannerShine {
+            0%, 100% { background-position: 0% 50%; transform: rotate(-1deg) scale(1); }
+            50% { background-position: 100% 50%; transform: rotate(-1deg) scale(1.05); }
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg, #667eea, #764ba2, #f093fb, #f5576c);
+            border-radius: 20px;
+            padding: 25px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            animation: cardFloat 4s ease-in-out infinite;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(102, 126, 234, 0.6);
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0s; }
+        .feature-card:nth-child(2) { animation-delay: 0.5s; }
+        .feature-card:nth-child(3) { animation-delay: 1s; }
+        .feature-card:nth-child(4) { animation-delay: 1.5s; }
+        .feature-card:nth-child(5) { animation-delay: 2s; }
+        .feature-card:nth-child(6) { animation-delay: 2.5s; }
+
+        @keyframes cardFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-10px) rotate(1deg); }
+            66% { transform: translateY(-5px) rotate(-1deg); }
+        }
+
+        .feature-emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 15px;
+            animation: emojiSpin 6s linear infinite;
+        }
+
+        @keyframes emojiSpin {
+            0% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(90deg) scale(1.1); }
+            50% { transform: rotate(180deg) scale(1); }
+            75% { transform: rotate(270deg) scale(1.1); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+
+        .feature-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .special-offers {
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            border-radius: 25px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(255, 154, 158, 0.4);
+            animation: offerPulse 3s ease-in-out infinite;
+            position: relative;
+        }
+
+        @keyframes offerPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .offers-title {
+            font-size: 2rem;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 20px;
+            animation: colorChange 4s ease-in-out infinite;
+        }
+
+        @keyframes colorChange {
+            0%, 100% { color: #ff4757; }
+            33% { color: #2ed573; }
+            66% { color: #3742fa; }
+        }
+
+        .offers-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .offer-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 15px 25px;
+            border-radius: 15px;
+            color: #333;
+            font-weight: 600;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: wiggle 2s ease-in-out infinite;
+        }
+
+        .offer-item:nth-child(1) { animation-delay: 0s; }
+        .offer-item:nth-child(2) { animation-delay: 0.3s; }
+        .offer-item:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(2deg); }
+            75% { transform: rotate(-2deg); }
+        }
+
+        .location {
+            background: linear-gradient(135deg, #11998e, #38ef7d, #00b894);
+            color: white;
+            padding: 35px;
+            border-radius: 25px;
+            margin: 35px 0;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(17, 153, 142, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .location::before {
+            content: '📍';
+            position: absolute;
+            font-size: 8rem;
+            opacity: 0.1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: locationPulse 4s ease-in-out infinite;
+        }
+
+        @keyframes locationPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -50%) scale(1.1); }
+        }
+
+        .location h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            animation: titleBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes titleBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .address {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #ff9a9e, #fecfef, #fecfef, #ff9a9e);
+            background-size: 400% 400%;
+            animation: gradientShift 3s ease infinite;
+            color: #333;
+            padding: 25px 50px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 20px 50px rgba(255, 154, 158, 0.5);
+            transition: all 0.3s ease;
+            margin: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 30px 70px rgba(255, 154, 158, 0.7);
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: buttonShine 3s ease-in-out infinite;
+        }
+
+        @keyframes buttonShine {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 25px;
+            border-radius: 20px;
+            margin: 25px 0;
+            text-align: center;
+            animation: infoGlow 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes infoGlow {
+            0% { box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3); }
+            100% { box-shadow: 0 20px 50px rgba(118, 75, 162, 0.5); }
+        }
+
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #ffd93d;
+            border-radius: 50%;
+            animation: twinkle 2s ease-in-out infinite;
+            box-shadow: 0 0 10px #ffd93d;
+        }
+
+        .sparkle:nth-child(1) { top: 15%; left: 8%; animation-delay: 0s; }
+        .sparkle:nth-child(2) { top: 65%; left: 88%; animation-delay: 0.4s; }
+        .sparkle:nth-child(3) { top: 25%; left: 75%; animation-delay: 0.8s; }
+        .sparkle:nth-child(4) { top: 85%; left: 15%; animation-delay: 1.2s; }
+        .sparkle:nth-child(5) { top: 5%; left: 45%; animation-delay: 1.6s; }
+        .sparkle:nth-child(6) { top: 45%; left: 5%; animation-delay: 2s; }
+        .sparkle:nth-child(7) { top: 75%; left: 60%; animation-delay: 2.4s; }
+        .sparkle:nth-child(8) { top: 35%; left: 92%; animation-delay: 2.8s; }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+            50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        .age-groups {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .age-group {
+            background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            color: #2d3436;
+            font-weight: bold;
+            box-shadow: 0 10px 25px rgba(255, 234, 167, 0.4);
+            animation: ageFloat 3s ease-in-out infinite;
+            min-width: 120px;
+        }
+
+        .age-group:nth-child(1) { animation-delay: 0s; }
+        .age-group:nth-child(2) { animation-delay: 0.5s; }
+        .age-group:nth-child(3) { animation-delay: 1s; }
+        .age-group:nth-child(4) { animation-delay: 1.5s; }
+
+        @keyframes ageFloat {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+        }
+
+        @media (max-width: 768px) {
+            .title { font-size: 2.8rem; }
+            .container { padding: 30px; margin: 10px; }
+            .features-grid { grid-template-columns: 1fr; }
+            .offers-list { flex-direction: column; align-items: center; }
+            .age-groups { justify-content: center; }
+            .floating-toys { display: none; }
+        }
+
+        .music-note {
+            position: absolute;
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            animation: musicFloat 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .note1 { top: 10%; right: 20%; animation-delay: 0s; }
+        .note2 { top: 30%; right: 80%; animation-delay: 1s; }
+        .note3 { bottom: 20%; left: 10%; animation-delay: 2s; }
+
+        @keyframes musicFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.5; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+   
+    <div class="container">
+        <div class="rainbow-border"></div>
+        
+        <!-- Music notes -->
+        <div class="music-note note1">🎵</div>
+        <div class="music-note note2">🎶</div>
+        <div class="music-note note3">🎵</div>
+        
+        <div class="sparkles">
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+        </div>
+        
+        <div class="headersss">
+            <h1 class="title">ANVAY KIDZ WORLD</h1>
+            <p class="subtitle">🌟 Where Dreams Come to Play & Imagination Takes Flight! 🌟</p>
+        </div>
+
+        <div class="urgency-banner">
+            🚨 HURRY UP! Fun Won't Wait! Limited Stock Available! 🚨
+        </div>
+
+        <div class="age-groups">
+            <div class="age-group">👶 0-2 Years</div>
+            <div class="age-group">🧒 3-6 Years</div>
+            <div class="age-group">👦 7-12 Years</div>
+            <div class="age-group">👧 12+ Years</div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="feature-emoji">🧸</span>
+                <div class="feature-title">Soft Toys</div>
+                <div class="feature-desc">Cuddly teddy bears, plush animals & comfort companions</div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji">🚗</span>
+                <div class="feature-title">Vehicles</div>
+                <div class="feature-desc">Cars, trucks, bikes & remote control adventures</div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji">🎮</span>
+                <div class="feature-title">Electronic Games</div>
+                <div class="feature-desc">Interactive games, tablets & learning devices</div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji">🪆</span>
+                <div class="feature-title">Dolls & Figures</div>
+                <div class="feature-desc">Barbie, action figures & collectible characters</div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji">🧩</span>
+                <div class="feature-title">Educational Toys</div>
+                <div class="feature-desc">Puzzles, building blocks & STEM learning kits</div>
+            </div>
+            <div class="feature-card">
+                <span class="feature-emoji">🎨</span>
+                <div class="feature-title">Arts & Crafts</div>
+                <div class="feature-desc">Colors, drawing sets & creative activity kits</div>
+            </div>
+        </div>
+
+        <div class="special-offers">
+            <h2 class="offers-title">🎉 MEGA DEALS TODAY! 🎉</h2>
+            <div class="offers-list">
+                <div class="offer-item">🔥 Buy 2 Get 1 FREE</div>
+                <div class="offer-item">💝 Up to 50% OFF</div>
+                <div class="offer-item">🎁 Free Gift Wrapping</div>
+            </div>
+        </div>
+
+        <div class="location">
+            <h3>📍 Visit Our Magical Toy Paradise!</h3>
+            <div class="address">
+                Beside Patel Building<br>
+                Tar Bazar, Main Road<br>
+                Katol, Maharashtra – 441302<br>
+                <strong>🕒 Open Daily: 9 AM - 9 PM</strong>
+            </div>
+        </div>
+
+        <div class="contact-info">
+            <h3>📞 Contact Us for More Info!</h3>
+            <p>Call us for toy availability & special requests</p>
+            <p><strong>We deliver joy to your doorstep! 🚚</strong></p>
+        </div>
+
+        <div class="cta-section">
+            <button class="cta-button" onclick="alert('🎉 Amazing! Come visit us today! Your favorite toys are waiting with special discounts! Don\'t miss out! 🎁')">
+                🎯 Grab Your Favorites Now!
+            </button>
+            <button class="cta-button" onclick="alert('🎪 Fantastic choice! Visit our store for the best toy selection in Katol! Fun guarantees await! 🌟')">
+                🏪 Visit Store Today!
+            </button>
+             <button class="cta-button" >
+               <a style="text-decoration: none;" href="../index.html"> Back To Home</a>
+            </button>
+        </div>
+    </div>
+</body>
+</html>
